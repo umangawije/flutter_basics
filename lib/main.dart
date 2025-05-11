@@ -20,16 +20,23 @@ class MyApp extends StatelessWidget {
           ),
           leading: Icon(Icons.menu, color: Colors.white),
         ),
-        body: GridView.builder(
-          itemCount: 64,
-          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-            crossAxisCount: 4,
-          ),
-          itemBuilder:
-              (context, index) => Container(
-                color: Colors.deepPurple,
-                margin: EdgeInsets.all(4),
+        body: Center(
+          child: GestureDetector(
+            onTap: () {
+              print("Container tapped");
+            },
+            child: Container(
+              width: 300,
+              height: 300,
+              color: Colors.deepPurple[100],
+              child: Center(
+                child: Text(
+                  "Tap Me!!",
+                  style: TextStyle(color: Colors.deepPurple, fontSize: 20),
+                ),
               ),
+            ),
+          ),
         ),
       ),
     );
