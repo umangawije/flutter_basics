@@ -11,6 +11,7 @@ class SecondPage extends StatelessWidget {
         title: Text("2nd page"),
         backgroundColor: Colors.lightBlue,
       ),
+      drawer: Drawer(),
       body: Center(
         child: ElevatedButton(
           child: Text("Go to 1st page"),
