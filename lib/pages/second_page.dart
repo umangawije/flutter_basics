@@ -11,7 +11,26 @@ class SecondPage extends StatelessWidget {
         title: Text("2nd page"),
         backgroundColor: Colors.lightBlue,
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        backgroundColor: Colors.amber[300],
+        child: Column(
+          children: [
+            DrawerHeader(child: Icon(Icons.favorite, size: 48)),
+
+            ListTile(
+              leading: Icon(Icons.home, size: 24),
+              title: Text("H O M E"),
+              onTap: () {},
+            ),
+
+            ListTile(
+              leading: Icon(Icons.settings, size: 24),
+              title: Text("S E T T I N G S"),
+              onTap: () {},
+            ),
+          ],
+        ),
+      ),
       body: Center(
         child: ElevatedButton(
           child: Text("Go to 1st page"),
