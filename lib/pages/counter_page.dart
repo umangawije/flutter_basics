@@ -22,6 +22,19 @@ class _CounterPageState extends State<CounterPage> {
   //User Interface
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("You Pushed button this many times"),
+            Text(
+              _counter.toString(),
+              style: TextStyle(fontSize: 40, fontWeight: FontWeight.bold),
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
