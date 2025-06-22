@@ -25,12 +25,12 @@ class _FirstPageState extends State<FirstPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("1st page"),
-        backgroundColor: Colors.amber[200],
+        title: Text("Home page"),
+        backgroundColor: Colors.blueGrey,
       ),
 
       drawer: Drawer(
-        backgroundColor: Colors.amber[300],
+        backgroundColor: Colors.black,
         child: Column(
           children: [
             DrawerHeader(
@@ -39,7 +39,7 @@ class _FirstPageState extends State<FirstPage> {
 
             ListTile(
               leading: Icon(Icons.home, size: 24),
-              title: Text("H O M E"),
+              title: Text("H O M E", style: TextStyle(color: Colors.white)),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/homepage');
@@ -48,7 +48,10 @@ class _FirstPageState extends State<FirstPage> {
 
             ListTile(
               leading: Icon(Icons.settings, size: 24),
-              title: Text("S E T T I N G S"),
+              title: Text(
+                "S E T T I N G S",
+                style: TextStyle(color: Colors.white),
+              ),
               onTap: () {
                 Navigator.pop(context);
                 Navigator.pushNamed(context, '/settingspage');
@@ -68,23 +71,41 @@ class _FirstPageState extends State<FirstPage> {
 
       body: _pages[_selectedIndex],
       //Bottom Navigation Bar
-      bottomNavigationBar: BottomNavigationBar(
-        currentIndex: _selectedIndex,
-        onTap: _navigateBottomBar,
-        items: [
-          BottomNavigationBarItem(
-            icon: Icon(Icons.home, size: 24),
-            label: 'Home',
+      bottomNavigationBar: ClipRRect(
+        borderRadius: const BorderRadius.only(
+          topLeft: Radius.circular(20),
+          topRight: Radius.circular(20),
+        ),
+        child: BottomNavigationBar(
+          backgroundColor: Colors.white,
+          currentIndex: _selectedIndex,
+          onTap: _navigateBottomBar,
+          elevation: 10,
+          selectedItemColor: Colors.blueAccent,
+          unselectedItemColor: Colors.grey,
+          selectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 14,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.settings, size: 24),
-            label: 'Settings',
+          unselectedLabelStyle: TextStyle(
+            fontWeight: FontWeight.w500,
+            fontSize: 12,
           ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.person, size: 24),
-            label: 'profile',
-          ),
-        ],
+          items: const [
+            BottomNavigationBarItem(
+              icon: Icon(Icons.home_rounded, size: 28),
+              label: 'Home',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.settings_rounded, size: 28),
+              label: 'Settings',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person_rounded, size: 28),
+              label: 'Profile',
+            ),
+          ],
+        ),
       ),
     );
   }
