@@ -28,15 +28,6 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-
-          // 🔹 Glassmorphic layer
-          Center(
-            child: Image.asset(
-              'assets/images/image.jpg',
-              width: 150,
-              height: 150,
-            ),
-          ),
         ],
       ),
     );
