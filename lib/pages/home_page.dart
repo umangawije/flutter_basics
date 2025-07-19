@@ -13,8 +13,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.yellow[200],
-      appBar: AppBar(backgroundColor: Colors.yellow, title: Text('To Do')),
+      backgroundColor: Colors.purple[200],
+      appBar: AppBar(
+        backgroundColor: Colors.purple[400],
+        title: Text('To Do', style: TextStyle(color: Colors.white)),
+      ),
       body: ListView(
         children: [
           ToDoTile(
