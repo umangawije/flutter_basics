@@ -15,7 +15,20 @@ class _HomePageState extends State<HomePage> {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
       appBar: AppBar(backgroundColor: Colors.yellow, title: Text('To Do')),
-      body: ListView(children: [ToDoTile()]),
+      body: ListView(
+        children: [
+          ToDoTile(
+            taskName: "Learn Flutter",
+            taskCompleted: true,
+            onChanged: (p0) {},
+          ),
+          ToDoTile(
+            taskName: "Learn React",
+            taskCompleted: false,
+            onChanged: (p0) {},
+          ),
+        ],
+      ),
     );
   }
 }
