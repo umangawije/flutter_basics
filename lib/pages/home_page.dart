@@ -13,7 +13,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.yellow[200],
-      appBar: AppBar(backgroundColor: Colors.yellow),
+      appBar: AppBar(backgroundColor: Colors.yellow, title: Text('To Do')),
     );
   }
 }
