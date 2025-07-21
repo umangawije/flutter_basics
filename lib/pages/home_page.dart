@@ -23,19 +23,13 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.purple[400],
         title: Text('To Do', style: TextStyle(color: Colors.white)),
       ),
-      body: ListView(
-        children: [
-          ToDoTile(
-            taskName: "Learn Flutter",
-            taskCompleted: true,
-            onChanged: (p0) {},
-          ),
-          ToDoTile(
-            taskName: "Learn React",
-            taskCompleted: false,
-            onChanged: (p0) {},
-          ),
-        ],
+      body: ListView.builder(
+        itemCount: toDoList.length,
+        itemBuilder: (context, index){
+          return ToDoTile(
+            taskName: toDoList[index][0],
+          )
+        },
       ),
     );
   }
