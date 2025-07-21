@@ -15,6 +15,9 @@ class _HomePageState extends State<HomePage> {
     ["Learn React", false],
     ["Learn Node.js", false],
   ];
+
+  //Checkbox changed
+  void checkboxChanged(bool? value, int index) {}
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -25,10 +28,12 @@ class _HomePageState extends State<HomePage> {
       ),
       body: ListView.builder(
         itemCount: toDoList.length,
-        itemBuilder: (context, index){
+        itemBuilder: (context, index) {
           return ToDoTile(
             taskName: toDoList[index][0],
-          )
+            taskCompleted: toDoList[index][1],
+            onChanged: (value) => checkboxChanged(value, index),
+          );
         },
       ),
     );
