@@ -17,7 +17,12 @@ class _HomePageState extends State<HomePage> {
   ];
 
   //Checkbox changed
-  void checkboxChanged(bool? value, int index) {}
+  void checkboxChanged(bool? value, int index) {
+    setState(() {
+      toDoList[index][1] = !toDoList[index][1];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
