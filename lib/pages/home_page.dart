@@ -31,6 +31,8 @@ class _HomePageState extends State<HomePage> {
         backgroundColor: Colors.purple[400],
         title: Text('To Do', style: TextStyle(color: Colors.white)),
       ),
+
+      floatingActionButton: FloatingActionButton(onPressed: () {}),
       body: ListView.builder(
         itemCount: toDoList.length,
         itemBuilder: (context, index) {
